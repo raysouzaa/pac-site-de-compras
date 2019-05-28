@@ -1,0 +1,11 @@
+html {
+    font-family: Arial;
+}
+
+.row {
+    cursor:pointer;
+}
+
+.page-footer {
+    background-color:#e91e63;
+}
