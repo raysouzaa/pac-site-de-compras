@@ -28,7 +28,7 @@
             <li><a  class="white-text" href="#make">Maquiagem</a></li>
             <li><a  class="white-text" href="#acessorios">Acessórios</a></li>
         </ul>
-<?php
+    <?php
 	
     $email = $_POST['email'];
     $password = $_POST['password'];
