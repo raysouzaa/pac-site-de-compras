@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['email'])){
+    $email = $_SESSION['email'];
+} else {
+    header('Location: login.html');
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

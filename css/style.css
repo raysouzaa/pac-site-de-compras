@@ -9,3 +9,7 @@ html {
 .page-footer {
     background-color:#e91e63;
 }
+
+.row .col.s4 {  
+    left: 350px;
+}
