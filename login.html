@@ -19,6 +19,7 @@
                         <li class="active" id="home"><a href="#home">Página Principal</a></li>
                         <li id="make"><a href="#make">Maquiagem</a></li>
                         <li id="acessorios"><a href="#acessorios">Acessórios</a> </li>
+                        <li><a href="login.html">Login</a> </li>
                     </ul>
                 </div>
             </nav>
@@ -27,6 +28,7 @@
             <li><a  class="white-text" href="#home">Página Principal</a></li>
             <li><a  class="white-text" href="#make">Maquiagem</a></li>
             <li><a  class="white-text" href="#acessorios">Acessórios</a></li>
+            <li><a  class="white-text" href="login.html">Login</a></li>
         </ul>
         <main>
             <section>
@@ -35,28 +37,30 @@
                     <p class="center-align">Faça o login para continuar.</p>
                 </div>
                 <div class="row">
-                    <form class="col s12 m4" action="validaLogin.php" method="POST">
+                    <form class="col s12 m6 l6 offset-l3 offset-m3" action="validaLogin.php" method="POST">
                         <div class="row">
-                            <div class="input-field col s12 offset-s12">
+                            <div class="input-field col s12">
                                 <input placeholder="Digite seu email" id="email" type="email" name="email" required>
                                 <label for="email">Email</label>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="input-field col s12 offset-s12">
+                            <div class="input-field col s12">
                                 <input placeholder="Digite sua senha" id="password" type="password" name="password" required>
                                 <label for="password">Password</label>
                             </div>
                         </div>
                         <div>
-                            <button class="btn waves-effect waves-light col s4 offset-s12" type="submit" id="btn-submit">Entrar</button>
+                            <button class="btn waves-effect waves-light col s12 m6 l6 offset-l3 offset-m3" type="submit" id="btn-submit">Entrar</button>
                         </div>  
                     </form>
                 </div>
-                <div class="row">    
-                    <p class="center-align">Se você não tem cadastro, cadastre-se aqui:</p>
-                    <a class="waves-effect waves-light btn col s2 offset-l5">Cadastrar</a>
+                <div class="row"> 
+                    <form class="col s12 m6 l6 offset-l3 offset-m3">   
+                        <p class="center-align">Se você não tem cadastro, cadastre-se aqui:</p>
+                        <a href="cadastro.php" class="waves-effect waves-light btn col s12 m6 l6 offset-l3 offset-m3">Cadastrar</a>
+                    </form>
                 </div>
             </section>
         </main>

@@ -30,57 +30,66 @@
             <li><a  class="white-text" href="#acessorios">Acessórios</a></li>
             <li><a  class="white-text" href="login.html">Login</a></li>
         </ul>
-    <?php
-	
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    
-    if($email == 'felipe@gmail.com') {
-        
-        if($password == '12345'){
-            
-            session_start();
-            $_SESSION['email'] = 'felipe@gmail.com';
-            $_SESSION['password'] = '12345';
-            header('Location: paginaInicial.php');
-            
-        } else {
-            echo "<br><br><br><br><center><label>Senha Incorreta</label></center>";
-        }
-    } else {
-        echo "<br><br><br><br><center><label>Usuário Incorreto</label></center>";
-    }
+<?php
 
+$nome = "nome";
+$email = "email";
+$senha = "senha";
+$erro = 0;
+
+//Verifica se o campo nome não está em branco
+if (empty($nome) OR strstr($nome, ' ')==false) {
+	echo "Favor digitar o seu nome corretamente.<br>";
+	$erro = 1;
+}
+
+//Verifica se o campo email está preenchido corretamente
+if (strlen($email)< 8 || strstr($email, '@')==false) {
+	echo "Favor digitar o seu email corretamente.<br>";
+	$erro = 1;
+}
+
+//Verifica se o campo cidade está em branco
+if (empty($senha)) {
+	echo "Favor digitar sua senha.<br>";
+	$erro = 1;
+}
+
+//Verifica se não houve erro - neste caso chama a include para inserir os dados
+if ($erro == 0) {
+	echo "Todos os dados foram digitados corretamente.<br>";
+	include 'insere.inc';
+}
 ?>
         <main>
             <section>
                 <div>
-                    <h3 class="center-align">Login</h3>
-                    <p class="center-align">Faça o login para continuar.</p>
+                    <h3 class="center-align">Cadastro</h3>
                 </div>
                 <div class="row">
-                    <form class="col s12 m4" action="validaLogin.php" method="POST">
+                    <form class="col s12 m6 l6 offset-l3 offset-m3" action="insere.inc" method="POST">
                         <div class="row">
-                            <div class="input-field col s12 offset-s12">
-                                <input placeholder="Digite seu email" id="email" type="email" class="validate">
-                                <label for="email">Email</label>
+                            <div class="input-field col s6">
+                            <input placeholder="Insira seu nome completo" id="nome" type="text" class="validate" required>
+                            <label for="first_name">Nome</label>
                             </div>
                         </div>
-
                         <div class="row">
-                            <div class="input-field col s12 offset-s12">
-                                <input placeholder="Digite sua senha" id="password" type="password" class="validate">
-                                <label for="password">Password</label>
+                            <div class="input-field col s12">
+                            <input placeholder="Insira seu email" id="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                            <input placeholder="Insira sua senha" id="senha" type="password" class="validate" required>
+                            <label for="password">Senha</label>
                             </div>
                         </div>
                         <div>
-                            <button class="btn waves-effect waves-light col s4 offset-s12" type="submit" name="action" id="btn-submit">Entrar</button>
-                        </div>  
+                            <button class="btn waves-effect waves-light col s12 m6 l6 offset-l3 offset-m3" type="submit" id="btn-submit" name="action">Cadastrar</button>
+                        </div>
                     </form>
-                </div>
-                <div class="row">    
-                    <p class="center-align">Se você não tem cadastro, cadastre-se aqui:</p>
-                    <a class="waves-effect waves-light btn col s2 offset-l5" href="cadastro.php">Cadastrar</a>
                 </div>
             </section>
         </main>
