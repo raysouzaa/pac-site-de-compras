@@ -37,29 +37,7 @@ $email = "email";
 $senha = "senha";
 $erro = 0;
 
-//Verifica se o campo nome não está em branco
-if (empty($nome) OR strstr($nome, ' ')==false) {
-	echo "Favor digitar o seu nome corretamente.<br>";
-	$erro = 1;
-}
 
-//Verifica se o campo email está preenchido corretamente
-if (strlen($email)< 8 || strstr($email, '@')==false) {
-	echo "Favor digitar o seu email corretamente.<br>";
-	$erro = 1;
-}
-
-//Verifica se o campo cidade está em branco
-if (empty($senha)) {
-	echo "Favor digitar sua senha.<br>";
-	$erro = 1;
-}
-
-//Verifica se não houve erro - neste caso chama a include para inserir os dados
-if ($erro == 0) {
-	echo "Todos os dados foram digitados corretamente.<br>";
-	include 'insere.inc';
-}
 ?>
         <main>
             <section>
@@ -67,22 +45,22 @@ if ($erro == 0) {
                     <h3 class="center-align">Cadastro</h3>
                 </div>
                 <div class="row">
-                    <form class="col s12 m6 l6 offset-l3 offset-m3" action="insere.inc" method="POST">
+                    <form class="col s12 m6 l6 offset-l3 offset-m3" action="cadastrausuario.php" method="POST">
                         <div class="row">
                             <div class="input-field col s6">
-                            <input placeholder="Insira seu nome completo" id="nome" type="text" class="validate" required>
+                            <input placeholder="Insira seu nome completo" id="nome" name="nome" type="text" class="validate" required>
                             <label for="first_name">Nome</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                            <input placeholder="Insira seu email" id="email" type="email" class="validate" required>
+                            <input placeholder="Insira seu email" id="email" name="email" type="email" class="validate" required>
                             <label for="email">Email</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                            <input placeholder="Insira sua senha" id="senha" type="password" class="validate" required>
+                            <input placeholder="Insira sua senha" id="senha" name="senha" type="password" class="validate" required>
                             <label for="password">Senha</label>
                             </div>
                         </div>

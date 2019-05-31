@@ -31,24 +31,30 @@
             <li><a  class="white-text" href="login.html">Login</a></li>
         </ul>
     <?php
+    $conexao = mysqli_connect("localhost","root","","bdcompras");
+	
+	if(!$conexao){
+		die("Erro de conexao: " . mysqli_error());
+	} else {
+		
+	}
 	
     $email = $_POST['email'];
-    $password = $_POST['password'];
     
-    if($email == 'felipe@gmail.com') {
+    if($email == 'email') {
         
-        if($password == '12345'){
+        if($senha == 'senha'){
             
             session_start();
-            $_SESSION['email'] = 'felipe@gmail.com';
-            $_SESSION['password'] = '12345';
+            $_SESSION['email'] = 'email';
+            $_SESSION['senha'] = 'senha';
             header('Location: paginaInicial.php');
             
         } else {
             echo "<br><br><br><br><center><label>Senha Incorreta</label></center>";
         }
     } else {
-        echo "<br><br><br><br><center><label>Usuário Incorreto</label></center>";
+        echo "<br><br><br><br><center><label>Email Incorreto</label></center>";
     }
 
 ?>
@@ -62,15 +68,15 @@
                     <form class="col s12 m4" action="validaLogin.php" method="POST">
                         <div class="row">
                             <div class="input-field col s12 offset-s12">
-                                <input placeholder="Digite seu email" id="email" type="email" class="validate">
+                                <input placeholder="Digite seu email" id="email" name="email" type="email" class="validate">
                                 <label for="email">Email</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12 offset-s12">
-                                <input placeholder="Digite sua senha" id="password" type="password" class="validate">
-                                <label for="password">Password</label>
+                                <input placeholder="Digite sua senha" id="senha" name="senha" type="password" class="validate">
+                                <label for="password">Senha</label>
                             </div>
                         </div>
                         <div>

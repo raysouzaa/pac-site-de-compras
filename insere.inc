@@ -16,3 +16,4 @@ if ($conexao->query($sql) === TRUE) {
 }
 
 $conexao->close();
+?>
