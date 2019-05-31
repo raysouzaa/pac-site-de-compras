@@ -40,10 +40,12 @@
 	}
 	
     $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    echo $email . " " . $senha;
     
     if($email == 'email') {
         
-        if($senha == 'senha'){
+        if($senha == ){
             
             session_start();
             $_SESSION['email'] = 'email';
