@@ -3,8 +3,10 @@ session_start();
 if(isset($_SESSION['email'])){
     $email = $_SESSION['email'];
 } else {
-    header('Location: login.html');
+    header('Location: login.php');
 }
+include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
+protegePagina();
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +30,8 @@ if(isset($_SESSION['email'])){
                         <li class="active" id="home"><a href="#home">Página Principal</a></li>
                         <li id="make"><a href="#make">Maquiagem</a></li>
                         <li id="acessorios"><a href="#acessorios">Acessórios</a> </li>
+                        <?php
+echo "Olá, " . $_SESSION['usuarioNome'];?>
                     </ul>
                 </div>
             </nav>
