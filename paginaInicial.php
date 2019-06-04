@@ -3,10 +3,8 @@ session_start();
 if(isset($_SESSION['email'])){
     $email = $_SESSION['email'];
 } else {
-    header('Location: login.php');
+    header('Location: login.html');
 }
-include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
-protegePagina();
 ?>
 
 <!DOCTYPE html>
@@ -30,8 +28,12 @@ protegePagina();
                         <li class="active" id="home"><a href="#home">Página Principal</a></li>
                         <li id="make"><a href="#make">Maquiagem</a></li>
                         <li id="acessorios"><a href="#acessorios">Acessórios</a> </li>
-                        <?php
-echo "Olá, " . $_SESSION['usuarioNome'];?>
+                        <li id="logout"><a href="logout.php" class="right-align">Sair</a></li>
+                        <ul id="dropdown2" class="dropdown-content">
+                        <li><a href="#!">Total de Itens<span class="badge">0</span></a></li>
+                        </ul>
+                        <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Carrinho<i class="material-icons right">add_shopping_cart</i></a>
+            
                     </ul>
                 </div>
             </nav>
@@ -40,6 +42,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
             <li><a  class="white-text" href="#home">Página Principal</a></li>
             <li><a  class="white-text" href="#make">Maquiagem</a></li>
             <li><a  class="white-text" href="#acessorios">Acessórios</a></li>
+            <li><a  class="white-text" href="logout.php">Sair</a></li>
         </ul>
         <header>
                 <div class="slider">
@@ -47,14 +50,14 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                           <li>
                             <img src="img/lips.jpg">
                             <div class="caption center-align col s12 m2">
-                              <h3 class="black-text">Para mulheres intensas!</h3>
+                              <h3>Para mulheres intensas!</h3>
                               <h5 class="light grey-text text-lighten-3">Descubra sua intensidade!</h5>
                             </div>
                           </li>
                           <li>
                             <img src="img/acessorios.jpg">
                             <div class="caption left-align">
-                              <h3 class="black-text ">Para mulheres romanticas!</h3>
+                              <h3>Para mulheres romanticas!</h3>
                               <h5 class="light grey-text text-lighten-3">Desperte seu romantismo!.</h5>
                             </div>
                           </li>
@@ -79,10 +82,10 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                         <div class="card">
                             <div class="card-image">
                                 <img class="responsive-img" data-caption="Oculos" href="#" src="img/Proporções+Batom+FPS+30.jpg">
-                                    <span class="card-title black-text"> Batom </span>
                             </div>    
                             <div class="card-content">
                                 <p>Batom vermelho!!!</p>
+                                <input type="number" id="produto2" value="0">
                             </div>
                             <div class="card-action">
                                 <a href="#">Mais Informações</a>
@@ -100,6 +103,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                     
                             <div class="card-content">
                                 <p>Batom vermelho!!!</p>
+                                <input type="number" id="produto2" value="0">
                             </div>
                             <div class="card-action">
                                 <a href="#">Mais Informações</a>
@@ -117,6 +121,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                     
                             <div class="card-content">
                                 <p>Batom vermelho!!!</p>
+                                <input type="number" id="produto2" value="0">
                             </div>
                             <div class="card-action">
                                 <a href="#">Mais Informações</a>
@@ -134,6 +139,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                     
                             <div class="card-content">
                                 <p>Batom vermelho!!!</p>
+                                <input type="number" id="produto2" value="0">
                             </div>
                             <div class="card-action">
                                 <a href="#">Mais Informações</a>
@@ -151,6 +157,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                     
                             <div class="card-content">
                                 <p>Batom vermelho!!!</p>
+                                <input type="number" id="produto2" value="0">
                             </div>
                             <div class="card-action">
                                 <a href="#">Mais Informações</a>
@@ -168,6 +175,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                     
                             <div class="card-content">
                                 <p>Batom vermelho!!!</p>
+                                <input type="number" id="produto2" value="0">
                             </div>
                             <div class="card-action">
                                 <a href="#">Mais Informações</a>
@@ -193,6 +201,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                             
                                 <div class="card-content">
                                     <p>Oculos muito estiloso!!!</p>
+                                    <input type="number" id="produto2" value="0">
                                 </div>
                                 <div class="card-action">
                                     <a href="#">Mais Informações</a>
@@ -209,6 +218,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                 
                                 <div class="card-content">
                                     <p>Oculos muito estiloso!!!</p>
+                                    <input type="number" id="produto2" value="0">
                                 </div>
                                 <div class="card-action">
                                     <a href="#">Mais Informações</a>
@@ -225,6 +235,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                     
                                 <div class="card-content">
                                     <p>Oculos muito estiloso!!!</p>
+                                    <input type="number" id="produto2" value="0">
                                 </div>
                                 <div class="card-action">
                                     <a href="#">Mais Informações</a>
@@ -246,6 +257,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                 
                             <div class="card-content">
                                 <p>Oculos muito estiloso!!!</p>
+                                <input type="number" id="produto2" value="0">
                             </div>
                             <div class="card-action">
                                 <a href="#">Mais Informações</a>
@@ -262,6 +274,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                     
                             <div class="card-content">
                                 <p>Oculos muito estiloso!!!</p>
+                                <input type="number" id="produto2" value="0">
                             </div>
                             <div class="card-action">
                                 <a href="#">Mais Informações</a>
@@ -278,6 +291,7 @@ echo "Olá, " . $_SESSION['usuarioNome'];?>
                                         
                             <div class="card-content">
                                 <p>Oculos muito estiloso!!!</p>
+                                <input type="number" id="produto2" value="0">
                             </div>
                             <div class="card-action">
                                 <a href="#">Mais Informações</a>

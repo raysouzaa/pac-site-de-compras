@@ -20,7 +20,7 @@
                         <li class="active" id="home"><a href="#home">Página Principal</a></li>
                         <li id="make"><a href="#make">Maquiagem</a></li>
                         <li id="acessorios"><a href="#acessorios">Acessórios</a> </li>
-                        <li><a href="login.html">Login</a> </li>
+                        <li><a href="login.php">Login</a> </li>
                     </ul>
                 </div>
             </nav>
@@ -29,7 +29,7 @@
             <li><a  class="white-text" href="#home">Página Principal</a></li>
             <li><a  class="white-text" href="#make">Maquiagem</a></li>
             <li><a  class="white-text" href="#acessorios">Acessórios</a></li>
-            <li><a  class="white-text" href="login.html">Login</a></li>
+            <li><a  class="white-text" href="login.php">Login</a></li>
         </ul>
         <main>
             <section>
@@ -38,7 +38,7 @@
                     <p class="center-align">Faça o login para continuar.</p>
                 </div>
                 <div class="row">
-                    <form class="col s12 m6 l6 offset-l3 offset-m3" action="validaLogin.php" method="POST">
+                    <form class="col s12 m6 l6 offset-l3 offset-m3" action="validalogindojeitocerto.php" method="POST">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input placeholder="Digite seu email" id="email" type="email" name="email" required>

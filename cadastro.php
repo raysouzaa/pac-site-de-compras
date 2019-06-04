@@ -47,7 +47,7 @@ $erro = 0;
                 <div class="row">
                     <form class="col s12 m6 l6 offset-l3 offset-m3" action="cadastrausuario.php" method="POST">
                         <div class="row">
-                            <div class="input-field col s6">
+                            <div class="input-field col s12">
                             <input placeholder="Insira seu nome completo" id="nome" name="nome" type="text" class="validate" required>
                             <label for="first_name">Nome</label>
                             </div>

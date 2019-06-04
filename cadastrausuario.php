@@ -21,10 +21,10 @@
         session_start();
         $_SESSION['email'] = 'email';
         $_SESSION['senha'] = 'senha';
-        header('Location: login.html');
+        header('Location: login.php');
 	} elseif ($num_linhas>0) {
         //cadastro ja existente
-        header('Location: login.html');
+        header('Location: login.php');
         echo "<label>Usuário já está cadastrado</label>";
         
     }
